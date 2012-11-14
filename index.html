@@ -3,11 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PlaceholderInput</title>	
+	<style type="text/css">
+
+	input,textarea{width:300px;height:20px;margin:5px;padding:5px;display:block}
+	textarea{height:50px}
+	</style>
 </head>
 <body>
+	<h1>How to use:</h1>
+	<h2>Add attribute data-placeholder in input and textarea</h2>
+	<h3>Example:</h3>
+<pre>
+	<code>
+	&lt;input <strong>data-placeholder="Enter your name"</strong> type="text"  &gt;
+	&lt;input <strong>data-placeholder="Enter your email"</strong> type="text" &gt;
+	&lt;textarea <strong>data-placeholder="Type your message"</strong> id="" name="" &gt;&lt;/textarea&gt;
+	</code>
+</pre>
+
+
 	<form>
 		<input type="text" data-placeholder="Enter your name">
-		<input type="text" data-placeholder="Enter your email"><br/>
+		<input type="text" data-placeholder="Enter your email">
 		<textarea name="" id="" data-placeholder="Type your message"></textarea>
 	</form>
 </body>
@@ -15,7 +32,6 @@
 /*
 PlaceholderInput v0.1 (14-11-2012)
 Lucas Cavalcanti (http://lucascavalcanti.com.br)
-http://rafael.adm.br/css_browser_selector
 License: http://creativecommons.org/licenses/by/2.5/
 ================================================================
 How to use: Add attribute data-placeholder in input and textarea
