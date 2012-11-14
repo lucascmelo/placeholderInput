@@ -1,7 +1,6 @@
 /*
 PlaceholderInput v0.1 (14-11-2012)
 Lucas Cavalcanti (http://lucascavalcanti.com.br)
-http://rafael.adm.br/css_browser_selector
 License: http://creativecommons.org/licenses/by/2.5/
 ================================================================
 How to use: Add attribute data-placeholder in input and textarea
