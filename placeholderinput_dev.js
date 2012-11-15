@@ -1,5 +1,5 @@
 /*
-PlaceholderInput v0.1 (14-11-2012)
+PlaceholderInput v0.2 (14-11-2012)
 Lucas Cavalcanti (http://lucascavalcanti.com.br)
 License: http://creativecommons.org/licenses/by/2.5/
 ================================================================
