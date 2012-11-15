@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>PlaceholderInput</title>	
 	<style type="text/css">
-
 	input,textarea{width:300px;height:20px;margin:5px;padding:5px;display:block}
 	textarea{height:50px}
 	</style>
@@ -13,6 +12,16 @@
 	<h1>How to use:</h1>
 	<h2>Add attribute placeholder in input and textarea</h2>
 	<h3>Example:</h3>
+	
+	<p>
+		The browser support the placeholder attribute?
+		<strong>
+		<script type="text/javascript">
+			input = document.createElement('input');
+  			document.write(verify = 'placeholder' in input);
+  		</script>
+  		</strong>
+	</p>
 <pre>
 	<code>
 	&lt;input <strong>placeholder="Enter your name"</strong> type="text"  &gt;
@@ -30,7 +39,7 @@
 </body>
 <script type="text/javascript">
 /*
-PlaceholderInput v0.1 (14-11-2012)
+PlaceholderInput v0.2 (14-11-2012)
 Lucas Cavalcanti (http://lucascavalcanti.com.br)
 License: http://creativecommons.org/licenses/by/2.5/
 ================================================================
