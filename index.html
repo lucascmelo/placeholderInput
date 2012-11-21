@@ -2,7 +2,40 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>PlaceholderInput</title>	
+	<title>PlaceholderInput</title>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-18191345-19']);
+	  _gaq.push(['_trackPageview','PlaceholderInput']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+		// ########## IGNORE THIS EVENT FROM GOOGLE ANALYTICS################
+		window.onload = function(){
+			var ip = document.getElementsByTagName("input");
+			var tx = document.getElementsByTagName("textarea");
+			for (var i = 0; i < ip.length + tx.length; i++) {
+				ip = ip[i]
+				tx = tx[i]
+				ip.onfocus = function(){
+					_gaq.push(['_trackEvent', 'Input', 'focus', 'placeholder']);
+				}
+				ip.onblur = function(){
+					_gaq.push(['_trackEvent', 'Input', 'blur', 'placeholder']);	
+				}
+
+				tx.onfocus = function(){
+					_gaq.push(['_trackEvent', 'Texarea', 'focus', 'placeholder']);
+				}
+				tx.onblur = function(){
+					_gaq.push(['_trackEvent', 'Textarea', 'blur', 'placeholder']);
+				}
+			};
+		}
+		// ########## IGNORE THIS EVENT FROM GOOGLE ANALYTICS################
+	</script>
 	<style type="text/css">
 	input,textarea{width:300px;height:20px;margin:5px;padding:5px;display:block}
 	textarea{height:50px}
@@ -65,9 +98,6 @@ function placeholderInput(){
 		textarea = document.getElementsByTagName("textarea"),
 		maxInputs = input.length + textarea.length;
 
-
-
-
 	for (var i = 0; i < maxInputs; i++) {
 		if (input[i]!=undefined) {
 			inputVal = input[i].getAttribute('placeholder');
@@ -92,7 +122,6 @@ function placeholderInput(){
 					this.value = this.getAttribute('placeholder');
 					this.type = 'text';
 				};
-				
 			};
 		};
 		if(textarea[i]!=undefined){
