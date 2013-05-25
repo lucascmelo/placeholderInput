@@ -23,7 +23,7 @@
 					_gaq.push(['_trackEvent', 'Input', 'focus', 'placeholder']);
 				}
 				ip.onblur = function(){
-					_gaq.push(['_trackEvent', 'Input', 'blur', 'placeholder']);	
+					_gaq.push(['_trackEvent', 'Input', 'blur', 'placeholder']);
 				}
 
 				tx.onfocus = function(){
@@ -45,7 +45,7 @@
 	<h1>How to use:</h1>
 	<h2>Add attribute placeholder in input and textarea</h2>
 	<h3>Example:</h3>
-	
+
 	<p>
 		The browser support the placeholder attribute?
 		<strong>
@@ -79,7 +79,7 @@ Lucas Cavalcanti (http://lucascavalcanti.com.br)
 License: http://creativecommons.org/licenses/by/2.5/
 ================================================================
 How to use: Add attribute placeholder in input and textarea
-Example: 
+Example:
 <input type="text" placeholder="Enter your name">
 <input type="text" placeholder="Enter your email">
 <textarea name="" id="" placeholder="Type your message"></textarea>
@@ -101,7 +101,8 @@ function placeholderInput(){
 	for (var i = 0; i < maxInputs; i++) {
 		if (input[i]!=undefined) {
 			inputVal = input[i].getAttribute('placeholder');
-			
+			input[i].value = inputVal;
+
 			if (input[i].type=='password'){
 				input[i].type = 'text';
 				input[i].setAttribute('data-type','pass');
@@ -111,12 +112,12 @@ function placeholderInput(){
 				if (this.getAttribute('data-type')=='pass'){
 					this.type = 'password';
 				};
-				
+
 				if (this.value=="" || this.value == this.getAttribute("placeholder")){
-					this.value='';	
+					this.value='';
 				};
 			};
-			
+
 			input[i].onblur = function(){
 				if (this.value == "" || this.value == this.getAttribute('placeholder') ) {
 					this.value = this.getAttribute('placeholder');
@@ -134,7 +135,7 @@ function placeholderInput(){
 
 			textarea[i].onblur = function(){
 				if (this.value=="" || this.value== this.getAttribute('placeholder') ) {
-					this.value = this.getAttribute('placeholder');	
+					this.value = this.getAttribute('placeholder');
 				};
 			};
 		};
