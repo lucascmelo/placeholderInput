@@ -2,39 +2,16 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>PlaceholderInput</title>
+	<title>placeholdersInput</title>
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-18191345-19']);
-	  _gaq.push(['_trackPageview','PlaceholderInput']);
-	  (function() {
+	  _gaq.push(['_trackPageview','placeholdersInput']);
+	  ;(function() {
 	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
-		// ########## IGNORE THIS EVENT FROM GOOGLE ANALYTICS################
-		window.onload = function(){
-			var ip = document.getElementsByTagName("input");
-			var tx = document.getElementsByTagName("textarea");
-			for (var i = 0; i < ip.length + tx.length; i++) {
-				ip = ip[i]
-				tx = tx[i]
-				ip.onfocus = function(){
-					_gaq.push(['_trackEvent', 'Input', 'focus', 'placeholder']);
-				}
-				ip.onblur = function(){
-					_gaq.push(['_trackEvent', 'Input', 'blur', 'placeholder']);	
-				}
-
-				tx.onfocus = function(){
-					_gaq.push(['_trackEvent', 'Texarea', 'focus', 'placeholder']);
-				}
-				tx.onblur = function(){
-					_gaq.push(['_trackEvent', 'Textarea', 'blur', 'placeholder']);
-				}
-			};
-		}
-		// ########## IGNORE THIS EVENT FROM GOOGLE ANALYTICS################
 	</script>
 	<style type="text/css">
 	input,textarea{width:300px;height:20px;margin:5px;padding:5px;display:block}
@@ -43,23 +20,23 @@
 </head>
 <body>
 	<h1>How to use:</h1>
-	<h2>Add attribute placeholder in input and textarea</h2>
+	<h2>Add attribute placeholders in input and textarea</h2>
 	<h3>Example:</h3>
-	
+
 	<p>
-		The browser support the placeholder attribute?
+		The browser support the placeholders attribute?
 		<strong>
 		<script type="text/javascript">
 			input = document.createElement('input');
-  			document.write(verify = 'placeholder' in input);
+  			document.write(verify = 'placeholders' in input);
   		</script>
   		</strong>
 	</p>
 <pre>
 	<code>
-	&lt;input <strong>placeholder="Enter your name"</strong> type="text"  &gt;
-	&lt;input <strong>placeholder="Enter your email"</strong> type="text" &gt;
-	&lt;textarea <strong>placeholder="Type your message"</strong> id="" name="" &gt;&lt;/textarea&gt;
+	&lt;input <strong>placeholders="Enter your name"</strong> type="text"  &gt;
+	&lt;input <strong>placeholders="Enter your email"</strong> type="text" &gt;
+	&lt;textarea <strong>placeholders="Type your message"</strong> id="" name="" &gt;&lt;/textarea&gt;
 	</code>
 </pre>
 
@@ -69,76 +46,8 @@
 		<input type="text" placeholder="Enter your email">
 		<input type="password" placeholder="Enter your password">
 		<input type="password" placeholder="Repeat your password">
-		<textarea name="" id="" placeholder="Type your message"></textarea>
+		<textarea placeholder="Type your message"></textarea>
 	</form>
 </body>
-<script type="text/javascript">
-/*
-PlaceholderInput v0.2 (14-11-2012)
-Lucas Cavalcanti (http://lucascavalcanti.com.br)
-License: http://creativecommons.org/licenses/by/2.5/
-================================================================
-How to use: Add attribute placeholder in input and textarea
-Example: 
-<input type="text" placeholder="Enter your name">
-<input type="text" placeholder="Enter your email">
-<textarea name="" id="" placeholder="Type your message"></textarea>
-*/
-
-;(function hasPlaceholderSupport(){
-  input = document.createElement('input');
-  verify = 'placeholder' in input;
-  if (verify==false){
-  	placeholderInput();
-  };
-})();
-function placeholderInput(){
-	var input = document.getElementsByTagName("input"),
-		pass = [],
-		textarea = document.getElementsByTagName("textarea"),
-		maxInputs = input.length + textarea.length;
-
-	for (var i = 0; i < maxInputs; i++) {
-		if (input[i]!=undefined) {
-			inputVal = input[i].getAttribute('placeholder');
-			
-			if (input[i].type=='password'){
-				input[i].type = 'text';
-				input[i].setAttribute('data-type','pass');
-			};
-
-			input[i].onfocus = function(){
-				if (this.getAttribute('data-type')=='pass'){
-					this.type = 'password';
-				};
-				
-				if (this.value=="" || this.value == this.getAttribute("placeholder")){
-					this.value='';	
-				};
-			};
-			
-			input[i].onblur = function(){
-				if (this.value == "" || this.value == this.getAttribute('placeholder') ) {
-					this.value = this.getAttribute('placeholder');
-					this.type = 'text';
-				};
-			};
-		};
-		if(textarea[i]!=undefined){
-			textareaVal = textarea[i].getAttribute('placeholder');
-			textarea[i].value = textareaVal;
-
-			textarea[i].onfocus = function(){
-				this.value='';
-			};
-
-			textarea[i].onblur = function(){
-				if (this.value=="" || this.value== this.getAttribute('placeholder') ) {
-					this.value = this.getAttribute('placeholder');	
-				};
-			};
-		};
-	};
-};
-</script>
+<script type="text/javascript" src="https://raw.github.com/lucascmelo/placeholderInput/master/placeholder.min.js"></script>
 </html>
